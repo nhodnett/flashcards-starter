@@ -34,7 +34,7 @@ it('should count the number of cards in the Deck', function() {
 
 it('should default to an empty array if no cards are passed in', function() {
   deck = new Deck()
-  expect(deck.deck).to.deep.equal([]);
+  expect(deck.cards).to.deep.equal([]);
 })
 
 });

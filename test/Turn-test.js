@@ -24,10 +24,16 @@ describe ('Turn', function() {
       expect(turn.returnCard()).to.equal(card);
   })
 
-  it('should be able to evaluate Guess', function() {
+  it('should be able to evaluate incorrect Guess', function() {
     const card = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
     const turn = new Turn('pug', card);
       expect(turn.evaluateGuess()).to.equal(false);
+  })
+
+  it('should be able to evaluate correct Guess', function() {
+    const card = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
+    const turn = new Turn('sea otter', card);
+      expect(turn.evaluateGuess()).to.equal(true);
   })
 
   it('should be able to give feedback', function() {

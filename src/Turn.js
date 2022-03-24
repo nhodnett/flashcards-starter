@@ -13,6 +13,9 @@ returnCard() {
 }
 
 evaluateGuess() {
+  // console.log('1', this.card)
+  // console.log('2', this.card.correctAnswer)
+  // console.log('3', this.guess)
   if (this.card.correctAnswer === this.guess) {
     return true
   } else {
@@ -21,7 +24,7 @@ evaluateGuess() {
 }
 
 giveFeedback() {
-  if (this.guess === this.card.correctAnswer) {
+  if (this.evaluateGuess()) {
   return 'correct!'
 } else {
   return 'incorrect!'
