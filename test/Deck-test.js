@@ -16,12 +16,16 @@ beforeEach(() => {
   deck = new Deck([card1, card2, card3]);
 })
 
-  it('should instantiate a new instance of Deck', function() {
-    expect(deck).to.be.an.instanceof(Deck);
+it('should be a function', function() {
+  const deck = new Deck();
+  expect(Deck).to.be.a('function');
+})
+
+it('should instantiate a new instance of Deck', function() {
+  expect(deck).to.be.an.instanceof(Deck);
 })
 
 it('should count the number of cards in the Deck', function() {
-
   expect(deck.countCards()).to.equal(3);
 
   const card4 = new Card(4, 'What type of prototype method does not modify the existing array but returns a particular representation of the array?',
@@ -29,12 +33,10 @@ it('should count the number of cards in the Deck', function() {
   deck2 = new Deck([card1, card2, card3, card4])
 
   expect(deck2.countCards()).to.equal(4);
-
 })
 
 it('should default to an empty array if no cards are passed in', function() {
   deck = new Deck()
   expect(deck.cards).to.deep.equal([]);
 })
-
 });
